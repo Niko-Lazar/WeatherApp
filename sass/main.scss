@@ -1,0 +1,23 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;700;900&family=Roboto:wght@500;700&display=swap');
+// font family
+$font-nunito: 'Nunito Sans', sans-serif;
+
+
+// colors
+$blue: hsl(236, 80%, 57%);
+$dark-blue: hsl(248, 35%, 8%);
+$light-blue: hsl(234, 32%, 17%);
+$text-color: hsl(240, 9%, 91%);
+$text-gray-color: hsl(243, 10%, 66%);
+$placeholder-color: hsl(231, 9%, 42%);
+$btn-background: hsl(230, 5%, 45%);
+
+
+
+// imports
+@import './reboot';
+@import './extend';
+@import './mixins';
+@import './layouts';
+@import './_components';

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="./sass/main.css">
+
+</head>
+<body>
+
+    <div class="content">
+
+        <div class="content-left">
+
+            <header>
+                <button class="btn" id="search_btn">Search for places</button>
+                <button class="icon-btn" id="gps">
+                    <span class="material-icons">gps_fixed</span>
+                </button>
+            </header>
+
+            <main>
+
+                <div class="icon">
+                    <img src="./img//Clear.png" alt="" id="current_w_icon">
+                </div>
+
+                <div class="temp">
+                    <div id="current_w_temp">15</div>
+                    <span id="temp_symbol">&#176;C</span>
+                </div>
+
+                <div class="type" id="current_w_type">
+                    Shower
+                </div>
+
+            </main>
+
+            <footer>
+
+                <div class="date">Today <span>&#183; </span><span id="current_w_date"></span></div>
+                <div class="location">
+                    <span class="material-icons">location_on</span> <span id="current_w_location"></span>
+                </div>
+            </footer>
+
+            <!-- search section -->
+            <section class="search-modal animate__animated" id="search_modal">
+                
+                <div class="close-btn"><span id="close_btn" class="material-icons">close</span></div>
+                <div class="input-group">
+                    <label for="">
+                        <input type="text" placeholder="search location" id="search_input">
+                        <span class="material-icons">search</span>
+                    </label>
+                    <button id="search">Search</button>
+                </div>
+                <ul class="city-list" id="city_list">
+                    <li>London</li>
+                    <li>Barselona</li>
+                </ul>
+            </section>
+
+        </div>
+
+        <div class="content-right">
+
+            <!-- buttons 4 changing temp type -->
+            <div class="temp-types">
+                <button data-units="celsius" class="icon-btn mr-1 active">&#176;C</button>
+                <button data-units="fahrenheit" class="icon-btn">&#176;F</button>
+            </div>
+            <!-- grid 4 5-days -->
+            <div class="days" id="days">
+                <div class="card">
+                    <div class="title">Tomorrow</div>
+                    <div class="icon">
+                        <img id="" src="./img/Clear.png" alt="">
+                    </div>
+                    <div class="temps">
+                        <div class="max">16<span>&#176;C</span></div>
+                        <div class="min">11<span>&#176;C</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="title">Tomorrow</div>
+                    <div class="icon">
+                        <img src="./img/Clear.png" alt="">
+                    </div>
+                    <div class="temps">
+                        <div class="max">16<span>&#176;C</span></div>
+                        <div class="min">11<span>&#176;C</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title">Tomorror</div>
+                    <div class="icon">
+                        <img src="./img/Clear.png" alt="">
+                    </div>
+                    <div class="temps">
+                        <div class="max">16<span>&#176;C</span></div>
+                        <div class="min">11<span>&#176;C</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title">Tomorrow</div>
+                    <div class="icon">
+                        <img src="./img/Clear.png" alt="">
+                    </div>
+                    <div class="temps">
+                        <div class="max">16<span>&#176;C</span></div>
+                        <div class="min">11<span>&#176;C</span></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title">Tomorrow</div>
+                    <div class="icon">
+                        <img src="./img/Clear.png" alt="">
+                    </div>
+                    <div class="temps">
+                        <div class="max">16<span>&#176;C</span></div>
+                        <div class="min">11<span>&#176;C</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- grid 4 curnt day / additnl inf -->
+            <div class="additional-infos">
+
+                <!-- title -->
+                <h2>Today's Highlights</h2>
+
+                <!-- grid -->
+                <div class="additional-infos-grid">
+                    <div class="card">
+
+                        <div class="title">Wind status</div>
+                        <div class="value">
+                            <div id="wind_speed"></div>
+                            <span>mph</span>
+                        </div>
+                        <div class="extras-wind-addon">
+                            <div class="icon mr-1">
+                                <span class="material-icons" id="wind_direction">navigation</span>
+                            </div>
+                            
+                            <div class="name" id="wind_compass">WSW</div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div class="title">Humidity</div>
+                        <div class="value">
+                            <div id="humidity"></div>
+                            <span>%</span>
+                        </div>
+                        <div class="extras-humidity-addon">
+                            <div class="progress-bar">
+                                <div class="values">
+                                    <span>0</span>
+                                    <span>50</span>
+                                    <span>100</span>
+                                </div>
+                                <div class="bar" id="humidity_percentage"></div>
+                                <div class="format">%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+
+                        <div class="title">Visibility</div>
+                        <div class="value">
+                            <div id="visibility"></div>
+                            <span>miles</span></div>
+                        
+                    </div>
+
+                    <div class="card">
+
+                        <div class="title">Air pressure</div>
+                        <div class="value">
+                            <div id="air_pressure"></div>
+                            <span>mbar</span></div>
+                        <div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./node_modules/moment/min/moment.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

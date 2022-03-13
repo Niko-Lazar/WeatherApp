@@ -1,0 +1,85 @@
+// layouts
+
+.content {
+    display: flex;
+    height: 100vh;
+
+    @include response(sm) {
+        flex-direction: column;
+        height: auto;
+    }
+
+    &-left {
+        background-color: $light-blue;
+        position: relative;
+        z-index: 1;
+
+        @include response(sm) { 
+            height: 100vh;
+        }
+
+        &::after {
+            content: "";
+            background-image: url('../img/Cloud-background.png');
+            background-repeat: no-repeat;
+            background-size: 130%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: -1;
+        }
+    }
+
+    &-right {
+        padding: 50px;
+        margin: 0 auto;
+        max-width: 850px;
+        flex: 1;
+
+        .temp-types {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .days {
+            display: flex;
+            
+            @include response(sm) { 
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+            }
+
+            .card {
+                text-align: center;
+
+                .temps {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .additional-infos {
+            &-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 40px;
+
+                @include response(sm) { 
+                    grid-template-columns: 1fr;
+                    grid-gap: 20px;
+                }
+                
+                .card {
+                    min-width: calc(50% - 20px);
+                }
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "weather-application",
+  "version": "1.0.0",
+  "description": "Weather application project",
+  "scripts": {
+    "start:dev": "gulp watch"
+  },
+  "keywords": [
+    "napredni-web-razvoj",
+    "javascript",
+    "weather-app"
+  ],
+  "author": "Lazar Nikolic",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "moment": "^2.29.1"
+  }
+}
