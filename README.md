@@ -4,4 +4,4 @@
 ### Remember to run **npm install** command in order to download the necessary files
 
 ## Check it out live at: https://niko-lazar.github.io/WeatherApp/
-## **NOTICE** the live deployment only shows the front end of the page, in order to see the application's full functionality node module packages are required.
+## **NOTICE** The live deployment only shows the front end side, in order to see the application's full functionality node module packages are required.
